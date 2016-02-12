@@ -30,7 +30,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = orgNames;
-	layer.Name = orgNames;
+	layer.setName(orgNames);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -95,7 +95,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = summa;
-	layer.Name = summa;
+	layer.setName(summa);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -141,7 +141,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = resultNum;
-	layer.Name = resultNum;
+	layer.setName(resultNum);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }	
 }
@@ -208,7 +208,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = dayNum;
-	layer.Name = dayNum;
+	layer.setName(dayNum);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -272,7 +272,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = dayNum;
-	layer.Name = dayNum;
+	layer.setName(dayNum);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -337,7 +337,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = dayNum;
-	layer.Name = dayNum;
+	layer.setName(dayNum);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -374,7 +374,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = randomName;
-	layer.Name = randomName;
+	layer.setName(randomName);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -413,7 +413,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = randomName;
-	layer.Name = randomName;
+	layer.setName(randomName);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -478,7 +478,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = innFl;
-	layer.Name = innFl;
+	layer.setName(innFl);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -518,7 +518,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = resultNum;
-	layer.Name = resultNum;
+	layer.setName(resultNum);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
@@ -596,7 +596,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
     updateRestoreStyle();
 
 	layer.stringValue = resultNum;
-	layer.Name = resultNum;
+	layer.setName(resultNum);
 	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }	
 }
