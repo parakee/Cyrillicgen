@@ -111,7 +111,7 @@
     ]
   },
   "identifier" : "com.sketch.cyrillicgen",
-  "version" : "1.2.2",
+  "version" : "1.3.0",
   "description" : "Генератор бизнес-информации на русском. Генерирует имена организаций, людей, даты, телефонные и другие номера.",
   "authorEmail" : "ventrum@ya.ru",
   "name" : "Cyrillicgen"
