@@ -1,0 +1,118 @@
+{
+  "author" : "parakee",
+  "commands" : [
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "OrgName",
+      "shortcut" : "",
+      "name" : "Название организации",
+      "identifier" : "OrgName"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "Money",
+      "shortcut" : "",
+      "name" : "Деньги",
+      "identifier" : "Money"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "ByMask",
+      "shortcut" : "",
+      "name" : "По маске",
+      "identifier" : "ByMask"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "dateDDMMYY",
+      "shortcut" : "",
+      "name" : "ДД.ММ.ГГГГ",
+      "identifier" : "dateDDMMYY"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "dateDDmounth",
+      "shortcut" : "",
+      "name" : "ДД месяц",
+      "identifier" : "dateDDmounth"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "dateDDmounthYear",
+      "shortcut" : "",
+      "name" : "ДД месяц ГГГГ",
+      "identifier" : "dateDDmounthYear"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "twoWords",
+      "shortcut" : "",
+      "name" : "Из двух слов",
+      "identifier" : "twoWords"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "threeWords",
+      "shortcut" : "",
+      "name" : "Из трех слов",
+      "identifier" : "threeWords"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "inn",
+      "shortcut" : "",
+      "name" : "ИНН",
+      "identifier" : "inn"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "kpp",
+      "shortcut" : "",
+      "name" : "КПП",
+      "identifier" : "kpp"
+    },
+    {
+      "script" : "cyrillicgen.cocoascript",
+      "handler" : "OtherNum",
+      "shortcut" : "",
+      "name" : "Другие номера",
+      "identifier" : "OtherNum"
+    }
+  ],
+  "menu": {
+    "title": "Бизнес-генератор",
+    "items": [
+      "OrgName",
+      "Money",
+      "ByMask",
+      {
+         "title": "Имена",
+         "items": [
+           "twoWords",
+           "threeWords"
+         ]
+       },
+       {
+         "title": "Даты",
+         "items": [
+           "dateDDmounth",
+           "dateDDmounthYear",
+           "dateDDMMYY"
+         ]
+       },
+       {
+         "title": "Номера",
+         "items": [
+           "inn",
+           "kpp",
+           "OtherNum"
+         ]
+       },
+    ]
+  },
+  "identifier" : "com.sketch.cyrillicgen",
+  "version" : "1.1.0",
+  "description" : "Плагин для генерации бизнес-информации",
+  "authorEmail" : "ventrum@ya.ru",
+  "name" : "Cyrillicgen"
+}
