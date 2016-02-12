@@ -112,7 +112,7 @@
   },
   "identifier" : "com.sketch.cyrillicgen",
   "version" : "1.2.2",
-  "description" : "Плагин для генерации бизнес-информации",
+  "description" : "Генератор бизнес-информации на русском. Генерирует имена организаций, людей, даты, телефонные и другие номера.",
   "authorEmail" : "ventrum@ya.ru",
   "name" : "Cyrillicgen"
 }

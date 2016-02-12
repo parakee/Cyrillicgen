@@ -20,7 +20,7 @@ Cyrillicgen — plugin for [Sketch](http://www.bohemiancoding.com/sketch/)
 
 6. Цифры по маске. Звездочки заменятся цифрами, остальное останется. Например, +7 9** ***-**-**
 
-@version: *1.2.1*
+@version: *1.2.2*
 
 
 ## Installation
