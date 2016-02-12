@@ -2,6 +2,11 @@
 var doc;
 var selection;
 
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 
 var OrgName = function (context) {
 doc = context.document;
@@ -44,11 +49,11 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	var pnol;
 	var znakov;
 	var maxZnak = 8;
-	summa += Math.floor(Math.random() * 9)+1;
-	znakov = Math.floor(Math.random() * (maxZnak-3))+3;
+	summa += getRandomInt(1,9);
+	znakov = getRandomInt(3,maxZnak-1);
 
 	for (var j = 0; j < znakov; j++) {
-		var randomDigit = Math.floor(Math.random() * 10);
+		var randomDigit = getRandomInt(0,9);;
 		if (znakov-j == 3 || znakov-j == 6) {
 			summa += " ";
 			summa += randomDigit;
@@ -59,7 +64,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 
 	summa += ",";
 
-	pnol = Math.floor(Math.random() * 20)+1;
+	pnol = getRandomInt(1,20);
 
 
 	if (pnol > 9 ) {
@@ -68,7 +73,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 		summa += pnol;
 	}
 
-    pnol = Math.floor(Math.random() * 20)+1;
+    pnol = getRandomInt(1,20);
 
 	if (pnol > 9 ) {
 		summa += "0";
@@ -116,7 +121,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 
 	for (var j = 0; j < maskLength; j++) {
 		var sym = mask.charAt(j);
-		if (sym == "*") { sym = Math.floor(Math.random() * 10); }
+		if (sym == "*") { sym = getRandomInt(0,9); }
 		resultNum += sym;
 	};
 
@@ -152,7 +157,7 @@ selection = context.selection;
 var namesMonth = ["01","02","03","04","05","06","07","08","09","10","11","12"];
 var today = new Date();
 var todayYear = today.getFullYear();
-var j = 12 - today.getMonth(); // Начинаем с текущего месяца
+var j = today.getMonth(); // Начинаем с текущего месяца
 var jFlag = -1;
 var actualNum = 0;
 var prevNum = 0;
@@ -162,10 +167,10 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	var layer = selection[i];
 	var dayNum = "";
 
-	if (j == 11) { j = 0; todayYear -= 1; } 		//если дошли до января, перемещаемся на декабрь и уменьшаем год
+	if (j == 0) { j = 11; todayYear -= 1; } 		//если дошли до января, перемещаемся на декабрь и уменьшаем год
 	
 	if (j == jFlag) { 										//если j (месяц) такое же, как в прошлый раз
-		var randomFlag = Math.floor(Math.random() * (chageChance - zeroChance +1)) + zeroChance;
+		var randomFlag = getRandomInt(zeroChance,chageChance);
 		if (randomFlag < 0) {randomFlag = 0;}
 		actualNum = prevNum - randomFlag;
 		if (actualNum > 0) {	
@@ -173,19 +178,20 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 			if (actualNum < 10) { dayNum = '0' + dayNum; }
 			prevNum = actualNum;
 		} else {
-			prevNum = Math.floor(Math.random() * 11) + 20;
+			prevNum = getRandomInt(20,30);
 			dayNum = prevNum + dayNum;
 			if (prevNum < 10) { prevNum = '0' + dayNum; }
-			j++;
+			j--;
 		}
 		jFlag = j;
 	} else { 										// если месяц изменился, все норм, берем произвольное число от 1 до 10
 		jFlag = j;
-		var prevNum = Math.floor(Math.random() * 11) + 20;
+		var prevNum = getRandomInt(20,30);
 		dayNum = prevNum + dayNum;
+
 	}
 
-	dayNum += "." + namesMonth[11 - j];
+	dayNum += "." + namesMonth[j];
 	dayNum += "." + todayYear;
 
 
@@ -232,21 +238,21 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	if (j == 11) { j = 0; todayYear -= 1; } 		//если дошли до января, перемещаемся на декабрь и уменьшаем год
 	
 	if (j == jFlag) { 										//если j (месяц) такое же, как в прошлый раз
-		var randomFlag = Math.floor(Math.random() * (chageChance - zeroChance +1)) + zeroChance;
+		var randomFlag = getRandomInt(zeroChance,chageChance);
 		if (randomFlag < 0) {randomFlag = 0;}
 		actualNum = prevNum - randomFlag;
 		if (actualNum > 0) {	
 			dayNum = actualNum + dayNum;
 			prevNum = actualNum;
 		} else {
-			prevNum = Math.floor(Math.random() * 11) + 20;
+			prevNum = getRandomInt(20,30);
 			dayNum = prevNum + dayNum;
 			j++;
 		}
 		jFlag = j;
 	} else { 										// если месяц изменился, все норм, берем произвольное число от 1 до 10
 		jFlag = j;
-		var prevNum = Math.floor(Math.random() * 11) + 20;
+		var prevNum = getRandomInt(20,30);
 		dayNum = prevNum + dayNum;
 	}
 
@@ -296,21 +302,21 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	if (j == 11) { j = 0; todayYear -= 1; } 		//если дошли до января, перемещаемся на декабрь и уменьшаем год
 	
 	if (j == jFlag) { 										//если j (месяц) такое же, как в прошлый раз
-		var randomFlag = Math.floor(Math.random() * (chageChance - zeroChance +1)) + zeroChance;
+		var randomFlag = getRandomInt(zeroChance,chageChance);
 		if (randomFlag < 0) {randomFlag = 0;}
 		actualNum = prevNum - randomFlag;
 		if (actualNum > 0) {	
 			dayNum = actualNum + dayNum;
 			prevNum = actualNum;
 		} else {
-			prevNum = Math.floor(Math.random() * 11) + 20;
+			prevNum = getRandomInt(20,30);
 			dayNum = prevNum + dayNum;
 			j++;
 		}
 		jFlag = j;
 	} else { 										// если месяц изменился, все норм, берем произвольное число от 1 до 10
 		jFlag = j;
-		var prevNum = Math.floor(Math.random() * 11) + 20;
+		var prevNum = getRandomInt(20,30);
 		dayNum = prevNum + dayNum;
 	}
 
@@ -390,9 +396,9 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	var lastNames = namesParts[randomGender][2];
 	var secondNames = namesParts[randomGender][3]
 
-	var randomName = lastNames[ Math.floor(Math.random() * lastNames.length) ];
-		randomName += ' ' + firstNames[ Math.floor(Math.random() * firstNames.length) ];
-		randomName += ' ' + secondNames[ Math.floor(Math.random() * secondNames.length) ];
+	var randomName = lastNames[ getRandomInt(0, lastNames.length-1) ];
+		randomName += ' ' + firstNames[ getRandomInt(0, firstNames.length-1) ];
+		randomName += ' ' + secondNames[ getRandomInt(0, secondNames.length-1) ];
 
 	var ef  = layer.font();       // блок для обновления стилей текстового поля
     var efs = layer.fontSize();
@@ -451,11 +457,11 @@ selection = context.selection;
 for (var i = 0, l = [selection count]; i < l; i++) {
 	var layer = selection[i];
 	var innFl = "";
-	innFl += Math.floor(Math.random() * 9)+1;
+	innFl += getRandomInt(1,9);
 
 
 	for (var j = 0; j < 9; j++) {
-		var randomDigit = Math.floor(Math.random() * 10);
+		var randomDigit = getRandomInt(0, 9);
 		innFl += randomDigit;
 	}
 
@@ -489,12 +495,12 @@ selection = context.selection;
 for (var i = 0, l = [selection count]; i < l; i++) {
 	var layer = selection[i];
 	var resultNum = "";
-	resultNum += Math.floor(Math.random() * 9)+1;
+	resultNum += getRandomInt(1,9);
 
 	for (var j = 0; j < 8; j++) {
 		if (j == 4) { resultNum += "01001"; j = 8;} // если это КПП, добавляем 01001 и заканчиваем
 		else {
-			var randomDigit = Math.floor(Math.random() * 10);
+			var randomDigit = getRandomInt(0, 9);
 			resultNum += randomDigit;
 		}
 	}
@@ -560,7 +566,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	if (flagContent == 0) {  // Правило для БИК и ОКПО, они начинаются с 0
 		resultNum += 0;
 	} else {
-		resultNum += Math.floor(Math.random() * 9) + 1;  // остальные начинаются не с 0
+		resultNum += getRandomInt(1,9);  // остальные начинаются не с 0
 	}
 
 
@@ -568,7 +574,7 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	for (var j = 0; j < (x - 1); j++) {
 		if (flagContent == 1 && j == 4) { resultNum += "01001"; j = x - 1;} // если это КПП, добавляем 01001 и заканчиваем
 		else {
-			var randomDigit = Math.floor(Math.random() * 10);
+			var randomDigit = getRandomInt(0, 9);
 			resultNum += randomDigit;
 		}
 
