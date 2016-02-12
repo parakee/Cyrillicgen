@@ -32,7 +32,7 @@ NOTE: you need Sketch 2.1.2 or later.
 
 ## Demo
 
-[![Demo Video](http://i.imgur.com/YG477SE.png)](https://vimeo.com/155104910)
+[![Demo Video](https://i.imgur.com/RMfntr8.png)](https://vimeo.com/155104910)
 
  
 [Twitter](https://twitter.com/parakee140)
