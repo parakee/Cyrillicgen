@@ -2,17 +2,36 @@
 var doc;
 var selection;
 
+
 var OrgName = function (context) {
 doc = context.document;
 selection = context.selection;
 for (var i = 0, l = [selection count]; i < l; i++) {
 	var layer = selection[i];
-
 	var randomOrg = Math.floor(Math.random() * namesOrg.length);
 	var orgNames = namesOrg[randomOrg];
 
-	[layer setStringValue: orgNames];
-	[layer setName: orgNames];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = orgNames;
+	layer.Name = orgNames;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -57,8 +76,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 		summa += pnol;
 	}
 
-	[layer setStringValue: summa];
-	[layer setName: summa];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = summa;
+	layer.Name = summa;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -84,8 +122,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 
 	//resultNum = mask.length;
 
-	[layer setStringValue: resultNum];
-	[layer setName: resultNum];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = resultNum;
+	layer.Name = resultNum;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }	
 }
 
@@ -132,8 +189,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	dayNum += "." + todayYear;
 
 
-	[layer setStringValue: dayNum];
-	[layer setName: dayNum];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = dayNum;
+	layer.Name = dayNum;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -177,8 +253,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	dayNum += " " + namesMonth[11 - j];
 
 
-	[layer setStringValue: dayNum];
-	[layer setName: dayNum];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = dayNum;
+	layer.Name = dayNum;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -223,8 +318,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	dayNum += " " + todayYear;
 
 
-	[layer setStringValue: dayNum];
-	[layer setName: dayNum];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = dayNum;
+	layer.Name = dayNum;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -241,8 +355,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	var randomName = firstNames[ Math.floor(Math.random() * firstNames.length) ];
 		randomName += ' ' + lastNames[ Math.floor(Math.random() * lastNames.length) ];
 
-	[layer setStringValue: randomName];
-	[layer setName: randomName];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = randomName;
+	layer.Name = randomName;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -261,8 +394,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 		randomName += ' ' + firstNames[ Math.floor(Math.random() * firstNames.length) ];
 		randomName += ' ' + secondNames[ Math.floor(Math.random() * secondNames.length) ];
 
-	[layer setStringValue: randomName];
-	[layer setName: randomName];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = randomName;
+	layer.Name = randomName;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -307,8 +459,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 		innFl += randomDigit;
 	}
 
-	[layer setStringValue: innFl];
-	[layer setName: innFl];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = innFl;
+	layer.Name = innFl;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -328,8 +499,27 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 		}
 	}
 
-	[layer setStringValue: resultNum];
-	[layer setName: resultNum];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = resultNum;
+	layer.Name = resultNum;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }
 }
 
@@ -387,7 +577,26 @@ for (var i = 0, l = [selection count]; i < l; i++) {
 	if (x == 0) { resultNum = "Хотелось_бы_число"; } 
 	if (x < 0) { resultNum = avResult; } 
 
-	[layer setStringValue: resultNum];
-	[layer setName: resultNum];
+	var ef  = layer.font();       // блок для обновления стилей текстового поля
+    var efs = layer.fontSize();
+    var ecs = layer.characterSpacing();
+    var els = layer.lineSpacing();
+    var eta = layer.textAlignment();
+    var etc = layer.textColor();
+    function updateRestoreStyle(){
+        layer.restoreStyle = function(){
+            this.setFont_(ef);
+            this.fontSize = efs;
+            this.characterSpacing = ecs;
+            this.lineSpacing = els;
+            this.textAlignment = eta;
+            this.textColor = etc;
+        }
+    }
+    updateRestoreStyle();
+
+	layer.stringValue = resultNum;
+	layer.Name = resultNum;
+	layer.restoreStyle(); // выравниваем размеры тектовы полей
 }	
 }
